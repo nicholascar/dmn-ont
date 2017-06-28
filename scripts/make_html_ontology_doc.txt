@@ -25,4 +25,16 @@ Things to do in order to create an HTML version of the ontology
     * http://eelst.cs.unibo.it/apps/LODE/ --> /static/
 
 * change favicon:
-* <link rel="shortcut icon" href="http://eelst.cs.unibo.it/apps/LODE/favicon.ico" /> --> <link rel="shortcut icon" href="/static/favicon.ico" />
+    * <link rel="shortcut icon" href="http://eelst.cs.unibo.it/apps/LODE/favicon.ico" /> --> <link rel="shortcut icon" href="/static/favicon.ico" />
+
+* add links to repository documentation
+    * add
+			<dl>
+				<dt>Further documentation & examples:</dt>
+				<dd><a href="http://github.com/nicholascar/dmn-ont">This ontology on GitHub</a></dd>
+			</dl>
+	after:
+			<dl>
+				<dt>Other visualisation:</dt>
+				<dd><a href="http://promsns.org/def/dmn.ttl">Ontology source</a></dd>
+			</dl>
