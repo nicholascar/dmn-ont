@@ -1,0 +1,681 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://promsns.org/def/dmn#URI> rdfs:label "uri"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#BusinessContextElement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#aggregation> rdfs:label "aggregation"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#allowedAnswers> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "allowed answers"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#allowedInItemDefinition> rdfs:label "allowed in item definition"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#UnaryTests> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#allowedValues> rdfs:label "allowed values"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ItemDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#artifact> rdfs:label "artifact"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#associationDirection> rdfs:label "association direction"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Association> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#authorityRequirement> rdfs:label "authority requirement"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#BusinessKnowledgeModel>,
+        <http://promsns.org/def/dmn#Decision>,
+        <http://promsns.org/def/dmn#KnowledgeSource> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#binding> rdfs:label "binding"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression>,
+        <http://promsns.org/def/dmn#InformationItem>,
+        <http://promsns.org/def/dmn#Invocation> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#bindingFormula> rdfs:label "binding formula"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Binding> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#bkm> rdfs:label "bkm"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#AuthorityRequirement>,
+        <http://promsns.org/def/dmn#FunctionDefinition>,
+        <http://promsns.org/def/dmn#InformationItem>,
+        <http://promsns.org/def/dmn#KnowledgeRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#body> rdfs:label "body"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#FunctionDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#businessContextElement> rdfs:label "business context element"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#calledFunction> rdfs:label "called function"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Invocation> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#caller> rdfs:label "caller"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#collection> rdfs:label "collection"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#column> rdfs:label "column"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Relation> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#containingDefinition> rdfs:label "containing definition"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ItemDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#context> rdfs:label "context"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ContextEntry> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#contextEnrty> rdfs:label "context enrty"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Context> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#contextEntry> rdfs:label "context entry"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression>,
+        <http://promsns.org/def/dmn#InformationItem> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decision> rdfs:label "decision"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#AuthorityRequirement>,
+        <http://promsns.org/def/dmn#Expression>,
+        <http://promsns.org/def/dmn#InformationRequirement>,
+        <http://promsns.org/def/dmn#KnowledgeRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionLogic> rdfs:label "decision logic"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionMade> rdfs:label "decision made"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#OrganisationalUnit> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionMaker> rdfs:label "decision maker"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionOutput> rdfs:label "decision output"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#InformationItem> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionOwned> rdfs:label "decision owned"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#OrganisationalUnit> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionOwner> rdfs:label "decision owner"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionService> rdfs:label "decision service"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#decisionTable> rdfs:label "decision table"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionRule>,
+        <http://promsns.org/def/dmn#InputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#defaultOutputEntry> rdfs:label "default output entry"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#OutputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#definitions> rdfs:label "definitions"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Artifact>,
+        <http://promsns.org/def/dmn#BusinessContextElement>,
+        <http://promsns.org/def/dmn#DRGElement>,
+        <http://promsns.org/def/dmn#DecisionService>,
+        <http://promsns.org/def/dmn#ElementCollection>,
+        <http://promsns.org/def/dmn#Import>,
+        <http://promsns.org/def/dmn#ItemDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#description> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "description"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DMNElement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#drgElement> rdfs:label "drg element"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions>,
+        <http://promsns.org/def/dmn#ElementCollection> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#element> rdfs:label "element"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ExtensionAttribute>,
+        <http://promsns.org/def/dmn#ExtensionElements>,
+        <http://promsns.org/def/dmn#List> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#elements> rdfs:label "elements"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Element> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#encapsulatedDecision> rdfs:label "encapsulated decision"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionService> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#encapsulatedDecisions> rdfs:label "encapsulated decisions"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#BusinessKnowledgeModel> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#encapsulatedLogic> rdfs:label "encapsulated logic"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#BusinessKnowledgeModel> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#exporter> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "exporter"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#exporterVersion> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "exporter version"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#expressionInput> rdfs:label "expression input"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#LiteralExpression> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#expressionLanguage> rdfs:label "expression language"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions>,
+        <http://promsns.org/def/dmn#ImportedValues>,
+        <http://promsns.org/def/dmn#LiteralExpression>,
+        <http://promsns.org/def/dmn#UnaryTests> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#extensionAttribute> rdfs:label "extension attribute"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DMNElement>,
+        <http://promsns.org/def/dmn#Element> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#extensionElement> rdfs:label "extension element"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ExtensionElements> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#extensionElements> rdfs:label "extension elements"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DMNElement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#formalParameter> rdfs:label "formal parameter"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#FunctionDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#functionDefinition> rdfs:label "function definition"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression>,
+        <http://promsns.org/def/dmn#InformationItem> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#hitPolicy> rdfs:label "hit policy"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#id> rdfs:label "id"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DMNElement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#impactedPerformanceIndicator> rdfs:label "impacted performance indicator"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#impactingDecision> rdfs:label "impacting decision"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#PerformanceIndicator> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#import> rdfs:label "import"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#importType> rdfs:label "import type"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Import> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#importedElement> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "imported element"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ImportedValues> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#importedValues> rdfs:label "imported values"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#LiteralExpression> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#informationRequirement> rdfs:label "information requirement"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#input> rdfs:label "input"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable>,
+        <http://promsns.org/def/dmn#UnaryTests> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#inputData> rdfs:label "input data"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionService>,
+        <http://promsns.org/def/dmn#InformationItem> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#inputDecision> rdfs:label "input decision"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionService> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#inputEntry> rdfs:label "input entry"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionRule> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#inputExpression> rdfs:label "input expression"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#InputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#inputValues> rdfs:label "input values"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#InputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#invocation> rdfs:label "invocation"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Binding> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#isCollection> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:label "is collection"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ItemDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#itemComponents> rdfs:label "item components"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ItemDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#itemDefinition> rdfs:label "item definition"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#knowledgeRequirement> rdfs:label "knowledge requirement"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#BusinessKnowledgeModel>,
+        <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#knowledgeSource> rdfs:label "knowledge source"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#AuthorityRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#label> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "label"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DMNElement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#list> rdfs:label "list"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#locationURI> rdfs:label "location uri"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Import>,
+        <http://promsns.org/def/dmn#KnowledgeSource> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#name> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "name"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ExtensionAttribute>,
+        <http://promsns.org/def/dmn#NamedElement>,
+        <http://promsns.org/def/dmn#OutputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#namespace> rdfs:label "namespace"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions>,
+        <http://promsns.org/def/dmn#Import> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#output> rdfs:label "output"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable>,
+        <http://promsns.org/def/dmn#LiteralExpression>,
+        <http://promsns.org/def/dmn#UnaryTests> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#outputDecision> rdfs:label "output decision"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionService> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#outputDefinition> rdfs:label "output definition"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#OutputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#outputEntry> rdfs:label "output entry"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionRule> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#outputLabel> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "output label"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#outputValues> rdfs:label "output values"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#OutputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#owner> rdfs:label "owner"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#KnowledgeSource> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#parameter> rdfs:label "parameter"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Binding>,
+        <http://promsns.org/def/dmn#BusinessKnowledgeModel> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#preferredOrientation> rdfs:label "preferred orientation"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#question> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "question"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#relation> rdfs:label "relation"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#InformationItem>,
+        <http://promsns.org/def/dmn#List> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#requiredAuthority> rdfs:label "required authority"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#AuthorityRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#requiredDecision> rdfs:label "required decision"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#AuthorityRequirement>,
+        <http://promsns.org/def/dmn#InformationRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#requiredInput> rdfs:label "required input"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#AuthorityRequirement>,
+        <http://promsns.org/def/dmn#InformationRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#requiredKnowledge> rdfs:label "required knowledge"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#KnowledgeRequirement> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#requiresInformation> rdfs:label "requires information"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision>,
+        <http://promsns.org/def/dmn#InputData> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#row> rdfs:label "row"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Relation> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#rule> rdfs:label "rule"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#DecisionTable> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ruleInput> rdfs:label "rule input"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#UnaryTests> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ruleOutput> rdfs:label "rule output"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#LiteralExpression> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#sourceRef> rdfs:label "source ref"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Association> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#supportedObjective> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:label "supported objective"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#targetRef> rdfs:label "target ref"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Association> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#text> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "text"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#LiteralExpression>,
+        <http://promsns.org/def/dmn#TextAnnotation>,
+        <http://promsns.org/def/dmn#UnaryTests> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#textFormat> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "text format"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#TextAnnotation> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#type> a <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+    rdfs:label "type"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression>,
+        <http://promsns.org/def/dmn#InformationItem>,
+        <http://promsns.org/def/dmn#KnowledgeSource> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> ;
+    rdfs:range xsd:string .
+
+<http://promsns.org/def/dmn#typeLanguage> rdfs:label "type language"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Definitions>,
+        <http://promsns.org/def/dmn#ItemDefinition> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#typeRef> rdfs:label "type ref"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Expression>,
+        <http://promsns.org/def/dmn#InformationItem>,
+        <http://promsns.org/def/dmn#ItemDefinition>,
+        <http://promsns.org/def/dmn#OutputClause> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#unnamed2> rdfs:label "unnamed2"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#TextAnnotation> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#usingProcess> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:label "using process"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#usingTask> a <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+    rdfs:label "using task"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#Decision> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#value> rdfs:label "value"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ContextEntry>,
+        <http://promsns.org/def/dmn#ExtensionAttribute> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#valueExpression> rdfs:label "value expression"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#InformationItem> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#valueRef> rdfs:label "value ref"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#ExtensionAttribute> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#variable> rdfs:label "variable"^^xsd:string ;
+    rdfs:domain <http://promsns.org/def/dmn#BusinessKnowledgeModel>,
+        <http://promsns.org/def/dmn#ContextEntry>,
+        <http://promsns.org/def/dmn#Decision>,
+        <http://promsns.org/def/dmn#InputData> ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Artifact> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Artifact"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Context> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Context"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#DRGElement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "D R G Element"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#NamedElement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Named Element"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#PerformanceIndicator> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Performance Indicator"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#BusinessContextElement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Business Context Element"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Element> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Element"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ElementCollection> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Element Collection"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ExtensionElements> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Extension Elements"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ImportedValues> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Imported Values"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#InputData> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Input Data"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Invocation> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Invocation"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#List> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "List"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#OrganisationalUnit> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Organisational Unit"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Relation> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Relation"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Association> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Association"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Binding> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Binding"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ContextEntry> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Context Entry"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#DecisionRule> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Decision Rule"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#FunctionDefinition> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Function Definition"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#InformationRequirement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Information Requirement"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#InputClause> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Input Clause"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#KnowledgeRequirement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Knowledge Requirement"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#TextAnnotation> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Text Annotation"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ExtensionAttribute> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Extension Attribute"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Import> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Import"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#KnowledgeSource> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Knowledge Source"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#DMNElement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "D M N Element"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#DecisionService> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Decision Service"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#OutputClause> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Output Clause"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#AuthorityRequirement> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Authority Requirement"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#BusinessKnowledgeModel> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Business Knowledge Model"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#LiteralExpression> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Literal Expression"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#UnaryTests> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Unary Tests"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#DecisionTable> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Decision Table"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#ItemDefinition> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Item Definition"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Expression> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Expression"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#InformationItem> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Information Item"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Definitions> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Definitions"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+
+<http://promsns.org/def/dmn#Decision> a <http://www.w3.org/2002/07/owl#Class> ;
+    rdfs:label "Decision"^^xsd:string ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn#> .
+

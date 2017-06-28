@@ -1,0 +1,2494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>DMN Ontology</title>
+		<link href="/static/LODE/owl.css" rel="stylesheet" type="text/css" />
+		<link href="/static/LODE/Primer.css" rel="stylesheet" type="text/css" />
+		<link href="/static/LODE/rec.css" rel="stylesheet" type="text/css" />
+		<link href="/static/LODE/extra.css" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="/static/favicon.ico" />
+		<script src="/static/LODE/jquery.js"></script>
+        <script src="/static/LODE/jquery.scrollTo.js"></script>
+        <script src="/static/LODE/marked.min.js"></script><script>
+			$(document).ready(
+			    function () {
+			    	jQuery(".markdown").each(function(el){
+			jQuery(this).after(marked(jQuery(this).text())).remove()});
+			        var list = $('a[id="http://www.essepuntato.it/tmp/1498625578-ontology"]');
+			        if (list.size() != 0) {
+			        	var element = list.first();
+			        	$.scrollTo(element);
+			        }
+			    });
+		</script>
+	</head>
+	<body>
+		<div class="head">
+			<h1>DMN Ontology</h1>
+			<dl>
+				<dt>IRI:</dt>
+				<dd>http://promsns.org/def/dmn#</dd>
+				<dt>Version IRI:</dt>
+				<dd>http://promsns.org/def/dmn/1.1</dd>
+			</dl>
+			<dl>
+				<dt>Current version:</dt>
+				<dd>1.1</dd>
+			</dl>
+			<dl>
+				<dt>Authors:</dt>
+				<dd>Nicholas Car</dd>
+				<dd><a href="http://orcid.org/0000-0002-8742-7730">http://orcid.org/0000-0002-8742-7730</a></dd>
+			</dl>
+			<dl>
+				<dt>Other visualisation:</dt>
+				<dd><a href="http://promsns.org/def/dmn.ttl">Ontology source</a></dd>
+			</dl>
+			<div class="copyright"><span class="markdown">(c) Nicholas Car 2017</span></div>
+		</div>
+		<hr />
+		<h2>Abstract</h2>
+		<span class="markdown">An OWL ontology version of Decision Modelling and Notation (DMN) (spec v1.1)[http://www.omg.org/spec/DMN/1.1].</span>
+		<div id="toc">
+			<h2>Table of Content</h2>
+			<ol>
+				<li><a href="#classes">Classes</a></li>
+				<li><a href="#objectproperties">Object Properties</a></li>
+				<li><a href="#dataproperties">Data Properties</a></li>
+				<li><a href="#annotationproperties">Annotation Properties</a></li>
+				<li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+			</ol>
+		</div>
+		<div id="classes">
+			<h2>Classes</h2>
+			<ul class="hlist">
+				<li><a href="#d4e1543" title="http://promsns.org/def/dmn#Artifact">Artifact</a></li>
+				<li><a href="#d4e1553" title="http://promsns.org/def/dmn#Association">Association</a></li>
+				<li><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a></li>
+				<li><a href="#d4e1574" title="http://promsns.org/def/dmn#Binding">Binding</a></li>
+				<li><a href="#d4e1584" title="http://promsns.org/def/dmn#BusinessContextElement">Business Context Element</a></li>
+				<li><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a></li>
+				<li><a href="#d4e1605" title="http://promsns.org/def/dmn#Context">Context</a></li>
+				<li><a href="#d4e1615" title="http://promsns.org/def/dmn#ContextEntry">Context Entry</a></li>
+				<li><a href="#d4e1625" title="http://promsns.org/def/dmn#DMNElement">D M N Element</a></li>
+				<li><a href="#d4e1636" title="http://promsns.org/def/dmn#DRGElement">D R G Element</a></li>
+				<li><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a></li>
+				<li><a href="#d4e1656" title="http://promsns.org/def/dmn#DecisionRule">Decision Rule</a></li>
+				<li><a href="#d4e1667" title="http://promsns.org/def/dmn#DecisionService">Decision Service</a></li>
+				<li><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a></li>
+				<li><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a></li>
+				<li><a href="#d4e1698" title="http://promsns.org/def/dmn#Element">Element</a></li>
+				<li><a href="#d4e1708" title="http://promsns.org/def/dmn#ElementCollection">Element Collection</a></li>
+				<li><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a></li>
+				<li><a href="#d4e1729" title="http://promsns.org/def/dmn#ExtensionAttribute">Extension Attribute</a></li>
+				<li><a href="#d4e1739" title="http://promsns.org/def/dmn#ExtensionElements">Extension Elements</a></li>
+				<li><a href="#d4e1749" title="http://promsns.org/def/dmn#FunctionDefinition">Function Definition</a></li>
+				<li><a href="#d4e1760" title="http://promsns.org/def/dmn#Import">Import</a></li>
+				<li><a href="#d4e1770" title="http://promsns.org/def/dmn#ImportedValues">Imported Values</a></li>
+				<li><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a></li>
+				<li><a href="#d4e1791" title="http://promsns.org/def/dmn#InformationRequirement">Information Requirement</a></li>
+				<li><a href="#d4e1801" title="http://promsns.org/def/dmn#InputClause">Input Clause</a></li>
+				<li><a href="#d4e1811" title="http://promsns.org/def/dmn#InputData">Input Data</a></li>
+				<li><a href="#d4e1822" title="http://promsns.org/def/dmn#Invocation">Invocation</a></li>
+				<li><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a></li>
+				<li><a href="#d4e1842" title="http://promsns.org/def/dmn#KnowledgeRequirement">Knowledge Requirement</a></li>
+				<li><a href="#d4e1853" title="http://promsns.org/def/dmn#KnowledgeSource">Knowledge Source</a></li>
+				<li><a href="#d4e1863" title="http://promsns.org/def/dmn#List">List</a></li>
+				<li><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a></li>
+				<li><a href="#d4e1884" title="http://promsns.org/def/dmn#NamedElement">Named Element</a></li>
+				<li><a href="#d4e1894" title="http://promsns.org/def/dmn#OrganisationalUnit">Organisational Unit</a></li>
+				<li><a href="#d4e1904" title="http://promsns.org/def/dmn#OutputClause">Output Clause</a></li>
+				<li><a href="#d4e1915" title="http://promsns.org/def/dmn#PerformanceIndicator">Performance Indicator</a></li>
+				<li><a href="#d4e1925" title="http://promsns.org/def/dmn#Relation">Relation</a></li>
+				<li><a href="#d4e1935" title="http://promsns.org/def/dmn#TextAnnotation">Text Annotation</a></li>
+				<li><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a></li>
+			</ul>
+			<div id="d4e1543" class="entity">
+				<a id="http://promsns.org/def/dmn#Artifact"></a>
+				<h3>Artifact<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Artifact</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1553" class="entity">
+				<a id="http://promsns.org/def/dmn#Association"></a>
+				<h3>Association<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Association</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#associationDirection">association direction</span>, <span class="dotted" title="http://promsns.org/def/dmn#sourceRef">source ref</span>, <span class="dotted" title="http://promsns.org/def/dmn#targetRef">target ref</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1563" class="entity">
+				<a id="http://promsns.org/def/dmn#AuthorityRequirement"></a>
+				<h3>Authority Requirement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#AuthorityRequirement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#bkm">bkm</span>, <span class="dotted" title="http://promsns.org/def/dmn#decision">decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#knowledgeSource">knowledge source</span>, <span class="dotted" title="http://promsns.org/def/dmn#requiredAuthority">required authority</span>, <span class="dotted" title="http://promsns.org/def/dmn#requiredDecision">required decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#requiredInput">required input</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1574" class="entity">
+				<a id="http://promsns.org/def/dmn#Binding"></a>
+				<h3>Binding<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Binding</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#bindingFormula">binding formula</span>, <span class="dotted" title="http://promsns.org/def/dmn#invocation">invocation</span>, <span class="dotted" title="http://promsns.org/def/dmn#parameter">parameter</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1584" class="entity">
+				<a id="http://promsns.org/def/dmn#BusinessContextElement"></a>
+				<h3>Business Context Element<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#BusinessContextElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span>, <span class="dotted" title="http://promsns.org/def/dmn#URI">uri</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1594" class="entity">
+				<a id="http://promsns.org/def/dmn#BusinessKnowledgeModel"></a>
+				<h3>Business Knowledge Model<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#BusinessKnowledgeModel</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#authorityRequirement">authority requirement</span>, <span class="dotted" title="http://promsns.org/def/dmn#encapsulatedDecisions">encapsulated decisions</span>, <span class="dotted" title="http://promsns.org/def/dmn#encapsulatedLogic">encapsulated logic</span>, <span class="dotted" title="http://promsns.org/def/dmn#knowledgeRequirement">knowledge requirement</span>, <span class="dotted" title="http://promsns.org/def/dmn#parameter">parameter</span>, <span class="dotted" title="http://promsns.org/def/dmn#variable">variable</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1605" class="entity">
+				<a id="http://promsns.org/def/dmn#Context"></a>
+				<h3>Context<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Context</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#contextEnrty">context enrty</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1615" class="entity">
+				<a id="http://promsns.org/def/dmn#ContextEntry"></a>
+				<h3>Context Entry<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ContextEntry</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#context">context</span>, <span class="dotted" title="http://promsns.org/def/dmn#value">value</span>, <span class="dotted" title="http://promsns.org/def/dmn#variable">variable</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1625" class="entity">
+				<a id="http://promsns.org/def/dmn#DMNElement"></a>
+				<h3>D M N Element<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#DMNElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><a href="#d4e1368" title="http://promsns.org/def/dmn#description">description</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#extensionAttribute">extension attribute</span>, <span class="dotted" title="http://promsns.org/def/dmn#extensionElements">extension elements</span>, <span class="dotted" title="http://promsns.org/def/dmn#id">id</span>, <a href="#d4e1425" title="http://promsns.org/def/dmn#label">label</a><sup title="data property" class="type-dp">dp</sup></dd>
+				</dl>
+			</div>
+			<div id="d4e1636" class="entity">
+				<a id="http://promsns.org/def/dmn#DRGElement"></a>
+				<h3>D R G Element<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#DRGElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1646" class="entity">
+				<a id="http://promsns.org/def/dmn#Decision"></a>
+				<h3>Decision<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Decision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><a href="#d4e1354" title="http://promsns.org/def/dmn#allowedAnswers">allowed answers</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#authorityRequirement">authority requirement</span>, <span class="dotted" title="http://promsns.org/def/dmn#decisionLogic">decision logic</span>, <span class="dotted" title="http://promsns.org/def/dmn#decisionMaker">decision maker</span>, <span class="dotted" title="http://promsns.org/def/dmn#decisionOwner">decision owner</span>, <span class="dotted" title="http://promsns.org/def/dmn#impactedPerformanceIndicator">impacted performance indicator</span>, <span class="dotted" title="http://promsns.org/def/dmn#informationRequirement">information requirement</span>, <span class="dotted" title="http://promsns.org/def/dmn#knowledgeRequirement">knowledge requirement</span>, <a href="#d4e1473" title="http://promsns.org/def/dmn#question">question</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#requiresInformation">requires information</span>, <a href="#d4e1315" title="http://promsns.org/def/dmn#supportedObjective">supported objective</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e1327" title="http://promsns.org/def/dmn#usingProcess">using process</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e1339" title="http://promsns.org/def/dmn#usingTask">using task</a><sup title="object property" class="type-op">op</sup>, <span class="dotted" title="http://promsns.org/def/dmn#variable">variable</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1656" class="entity">
+				<a id="http://promsns.org/def/dmn#DecisionRule"></a>
+				<h3>Decision Rule<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#DecisionRule</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#decisionTable">decision table</span>, <span class="dotted" title="http://promsns.org/def/dmn#inputEntry">input entry</span>, <span class="dotted" title="http://promsns.org/def/dmn#outputEntry">output entry</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1667" class="entity">
+				<a id="http://promsns.org/def/dmn#DecisionService"></a>
+				<h3>Decision Service<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#DecisionService</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span>, <span class="dotted" title="http://promsns.org/def/dmn#encapsulatedDecision">encapsulated decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#inputData">input data</span>, <span class="dotted" title="http://promsns.org/def/dmn#inputDecision">input decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#outputDecision">output decision</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1677" class="entity">
+				<a id="http://promsns.org/def/dmn#DecisionTable"></a>
+				<h3>Decision Table<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#DecisionTable</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#aggregation">aggregation</span>, <span class="dotted" title="http://promsns.org/def/dmn#hitPolicy">hit policy</span>, <span class="dotted" title="http://promsns.org/def/dmn#input">input</span>, <span class="dotted" title="http://promsns.org/def/dmn#output">output</span>, <a href="#d4e1459" title="http://promsns.org/def/dmn#outputLabel">output label</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#preferredOrientation">preferred orientation</span>, <span class="dotted" title="http://promsns.org/def/dmn#rule">rule</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1687" class="entity">
+				<a id="http://promsns.org/def/dmn#Definitions"></a>
+				<h3>Definitions<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Definitions</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#artifact">artifact</span>, <span class="dotted" title="http://promsns.org/def/dmn#businessContextElement">business context element</span>, <span class="dotted" title="http://promsns.org/def/dmn#collection">collection</span>, <span class="dotted" title="http://promsns.org/def/dmn#decisionService">decision service</span>, <span class="dotted" title="http://promsns.org/def/dmn#drgElement">drg element</span>, <a href="#d4e1382" title="http://promsns.org/def/dmn#exporter">exporter</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e1397" title="http://promsns.org/def/dmn#exporterVersion">exporter version</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#expressionLanguage">expression language</span>, <span class="dotted" title="http://promsns.org/def/dmn#import">import</span>, <span class="dotted" title="http://promsns.org/def/dmn#itemDefinition">item definition</span>, <span class="dotted" title="http://promsns.org/def/dmn#namespace">namespace</span>, <span class="dotted" title="http://promsns.org/def/dmn#typeLanguage">type language</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1698" class="entity">
+				<a id="http://promsns.org/def/dmn#Element"></a>
+				<h3>Element<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Element</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#elements">elements</span>, <span class="dotted" title="http://promsns.org/def/dmn#extensionAttribute">extension attribute</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1708" class="entity">
+				<a id="http://promsns.org/def/dmn#ElementCollection"></a>
+				<h3>Element Collection<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ElementCollection</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span>, <span class="dotted" title="http://promsns.org/def/dmn#drgElement">drg element</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1718" class="entity">
+				<a id="http://promsns.org/def/dmn#Expression"></a>
+				<h3>Expression<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Expression</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#binding">binding</span>, <span class="dotted" title="http://promsns.org/def/dmn#caller">caller</span>, <span class="dotted" title="http://promsns.org/def/dmn#contextEntry">context entry</span>, <span class="dotted" title="http://promsns.org/def/dmn#decision">decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#functionDefinition">function definition</span>, <span class="dotted" title="http://promsns.org/def/dmn#list">list</span>, <a href="#d4e1521" title="http://promsns.org/def/dmn#type">type</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#typeRef">type ref</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1729" class="entity">
+				<a id="http://promsns.org/def/dmn#ExtensionAttribute"></a>
+				<h3>Extension Attribute<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ExtensionAttribute</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#element">element</span>, <a href="#d4e1440" title="http://promsns.org/def/dmn#name">name</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#value">value</span>, <span class="dotted" title="http://promsns.org/def/dmn#valueRef">value ref</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1739" class="entity">
+				<a id="http://promsns.org/def/dmn#ExtensionElements"></a>
+				<h3>Extension Elements<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ExtensionElements</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#element">element</span>, <span class="dotted" title="http://promsns.org/def/dmn#extensionElement">extension element</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1749" class="entity">
+				<a id="http://promsns.org/def/dmn#FunctionDefinition"></a>
+				<h3>Function Definition<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#FunctionDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#bkm">bkm</span>, <span class="dotted" title="http://promsns.org/def/dmn#body">body</span>, <span class="dotted" title="http://promsns.org/def/dmn#formalParameter">formal parameter</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1760" class="entity">
+				<a id="http://promsns.org/def/dmn#Import"></a>
+				<h3>Import<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Import</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span>, <span class="dotted" title="http://promsns.org/def/dmn#importType">import type</span>, <span class="dotted" title="http://promsns.org/def/dmn#locationURI">location uri</span>, <span class="dotted" title="http://promsns.org/def/dmn#namespace">namespace</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1770" class="entity">
+				<a id="http://promsns.org/def/dmn#ImportedValues"></a>
+				<h3>Imported Values<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ImportedValues</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#expressionLanguage">expression language</span>, <a href="#d4e1411" title="http://promsns.org/def/dmn#importedElement">imported element</a><sup title="data property" class="type-dp">dp</sup></dd>
+				</dl>
+			</div>
+			<div id="d4e1780" class="entity">
+				<a id="http://promsns.org/def/dmn#InformationItem"></a>
+				<h3>Information Item<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#InformationItem</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#binding">binding</span>, <span class="dotted" title="http://promsns.org/def/dmn#bkm">bkm</span>, <span class="dotted" title="http://promsns.org/def/dmn#contextEntry">context entry</span>, <span class="dotted" title="http://promsns.org/def/dmn#decisionOutput">decision output</span>, <span class="dotted" title="http://promsns.org/def/dmn#functionDefinition">function definition</span>, <span class="dotted" title="http://promsns.org/def/dmn#inputData">input data</span>, <span class="dotted" title="http://promsns.org/def/dmn#relation">relation</span>, <a href="#d4e1521" title="http://promsns.org/def/dmn#type">type</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#typeRef">type ref</span>, <span class="dotted" title="http://promsns.org/def/dmn#valueExpression">value expression</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1791" class="entity">
+				<a id="http://promsns.org/def/dmn#InformationRequirement"></a>
+				<h3>Information Requirement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#InformationRequirement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#decision">decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#requiredDecision">required decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#requiredInput">required input</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1801" class="entity">
+				<a id="http://promsns.org/def/dmn#InputClause"></a>
+				<h3>Input Clause<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#InputClause</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#decisionTable">decision table</span>, <span class="dotted" title="http://promsns.org/def/dmn#inputExpression">input expression</span>, <span class="dotted" title="http://promsns.org/def/dmn#inputValues">input values</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1811" class="entity">
+				<a id="http://promsns.org/def/dmn#InputData"></a>
+				<h3>Input Data<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#InputData</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#requiresInformation">requires information</span>, <span class="dotted" title="http://promsns.org/def/dmn#variable">variable</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1822" class="entity">
+				<a id="http://promsns.org/def/dmn#Invocation"></a>
+				<h3>Invocation<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Invocation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#binding">binding</span>, <span class="dotted" title="http://promsns.org/def/dmn#calledFunction">called function</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1832" class="entity">
+				<a id="http://promsns.org/def/dmn#ItemDefinition"></a>
+				<h3>Item Definition<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ItemDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#allowedValues">allowed values</span>, <span class="dotted" title="http://promsns.org/def/dmn#containingDefinition">containing definition</span>, <span class="dotted" title="http://promsns.org/def/dmn#definitions">definitions</span>, <a href="#d4e1302" title="http://promsns.org/def/dmn#isCollection">is collection</a><sup title="object property" class="type-op">op</sup>, <span class="dotted" title="http://promsns.org/def/dmn#itemComponents">item components</span>, <span class="dotted" title="http://promsns.org/def/dmn#typeLanguage">type language</span>, <span class="dotted" title="http://promsns.org/def/dmn#typeRef">type ref</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1842" class="entity">
+				<a id="http://promsns.org/def/dmn#KnowledgeRequirement"></a>
+				<h3>Knowledge Requirement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#KnowledgeRequirement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#bkm">bkm</span>, <span class="dotted" title="http://promsns.org/def/dmn#decision">decision</span>, <span class="dotted" title="http://promsns.org/def/dmn#requiredKnowledge">required knowledge</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1853" class="entity">
+				<a id="http://promsns.org/def/dmn#KnowledgeSource"></a>
+				<h3>Knowledge Source<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#KnowledgeSource</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#authorityRequirement">authority requirement</span>, <span class="dotted" title="http://promsns.org/def/dmn#locationURI">location uri</span>, <span class="dotted" title="http://promsns.org/def/dmn#owner">owner</span>, <a href="#d4e1521" title="http://promsns.org/def/dmn#type">type</a><sup title="data property" class="type-dp">dp</sup></dd>
+				</dl>
+			</div>
+			<div id="d4e1863" class="entity">
+				<a id="http://promsns.org/def/dmn#List"></a>
+				<h3>List<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#List</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#element">element</span>, <span class="dotted" title="http://promsns.org/def/dmn#relation">relation</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1873" class="entity">
+				<a id="http://promsns.org/def/dmn#LiteralExpression"></a>
+				<h3>Literal Expression<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#LiteralExpression</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#expressionInput">expression input</span>, <span class="dotted" title="http://promsns.org/def/dmn#expressionLanguage">expression language</span>, <span class="dotted" title="http://promsns.org/def/dmn#importedValues">imported values</span>, <span class="dotted" title="http://promsns.org/def/dmn#output">output</span>, <span class="dotted" title="http://promsns.org/def/dmn#ruleOutput">rule output</span>, <a href="#d4e1488" title="http://promsns.org/def/dmn#text">text</a><sup title="data property" class="type-dp">dp</sup></dd>
+				</dl>
+			</div>
+			<div id="d4e1884" class="entity">
+				<a id="http://promsns.org/def/dmn#NamedElement"></a>
+				<h3>Named Element<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#NamedElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><a href="#d4e1440" title="http://promsns.org/def/dmn#name">name</a><sup title="data property" class="type-dp">dp</sup></dd>
+				</dl>
+			</div>
+			<div id="d4e1894" class="entity">
+				<a id="http://promsns.org/def/dmn#OrganisationalUnit"></a>
+				<h3>Organisational Unit<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#OrganisationalUnit</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#decisionMade">decision made</span>, <span class="dotted" title="http://promsns.org/def/dmn#decisionOwned">decision owned</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1904" class="entity">
+				<a id="http://promsns.org/def/dmn#OutputClause"></a>
+				<h3>Output Clause<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#OutputClause</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#defaultOutputEntry">default output entry</span>, <a href="#d4e1440" title="http://promsns.org/def/dmn#name">name</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#outputDefinition">output definition</span>, <span class="dotted" title="http://promsns.org/def/dmn#outputValues">output values</span>, <span class="dotted" title="http://promsns.org/def/dmn#typeRef">type ref</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1915" class="entity">
+				<a id="http://promsns.org/def/dmn#PerformanceIndicator"></a>
+				<h3>Performance Indicator<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#PerformanceIndicator</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#impactingDecision">impacting decision</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1925" class="entity">
+				<a id="http://promsns.org/def/dmn#Relation"></a>
+				<h3>Relation<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#Relation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#column">column</span>, <span class="dotted" title="http://promsns.org/def/dmn#row">row</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1935" class="entity">
+				<a id="http://promsns.org/def/dmn#TextAnnotation"></a>
+				<h3>Text Annotation<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#TextAnnotation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><a href="#d4e1488" title="http://promsns.org/def/dmn#text">text</a><sup title="data property" class="type-dp">dp</sup>, <a href="#d4e1507" title="http://promsns.org/def/dmn#textFormat">text format</a><sup title="data property" class="type-dp">dp</sup>, <span class="dotted" title="http://promsns.org/def/dmn#unnamed2">unnamed2</span></dd>
+				</dl>
+			</div>
+			<div id="d4e1946" class="entity">
+				<a id="http://promsns.org/def/dmn#UnaryTests"></a>
+				<h3>Unary Tests<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#UnaryTests</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<dl class="description">
+					<dt>is in domain of</dt>
+					<dd><span class="dotted" title="http://promsns.org/def/dmn#allowedInItemDefinition">allowed in item definition</span>, <span class="dotted" title="http://promsns.org/def/dmn#expressionLanguage">expression language</span>, <span class="dotted" title="http://promsns.org/def/dmn#input">input</span>, <span class="dotted" title="http://promsns.org/def/dmn#output">output</span>, <span class="dotted" title="http://promsns.org/def/dmn#ruleInput">rule input</span>, <a href="#d4e1488" title="http://promsns.org/def/dmn#text">text</a><sup title="data property" class="type-dp">dp</sup></dd>
+				</dl>
+			</div>
+		</div>
+		<div id="objectproperties">
+			<h2>Object Properties</h2>
+			<ul class="hlist">
+				<li><a href="#d4e1302" title="http://promsns.org/def/dmn#isCollection">is collection</a></li>
+				<li><a href="#d4e1315" title="http://promsns.org/def/dmn#supportedObjective">supported objective</a></li>
+				<li><a href="#d4e1327" title="http://promsns.org/def/dmn#usingProcess">using process</a></li>
+				<li><a href="#d4e1339" title="http://promsns.org/def/dmn#usingTask">using task</a></li>
+			</ul>
+			<div id="d4e1302" class="entity">
+				<a id="http://promsns.org/def/dmn#isCollection"></a>
+				<h3>is collection<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#isCollection</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1315" class="entity">
+				<a id="http://promsns.org/def/dmn#supportedObjective"></a>
+				<h3>supported objective<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#supportedObjective</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1327" class="entity">
+				<a id="http://promsns.org/def/dmn#usingProcess"></a>
+				<h3>using process<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#usingProcess</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1339" class="entity">
+				<a id="http://promsns.org/def/dmn#usingTask"></a>
+				<h3>using task<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#usingTask</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div id="dataproperties">
+			<h2>Data Properties</h2>
+			<ul class="hlist">
+				<li><a href="#d4e1354" title="http://promsns.org/def/dmn#allowedAnswers">allowed answers</a></li>
+				<li><a href="#d4e1368" title="http://promsns.org/def/dmn#description">description</a></li>
+				<li><a href="#d4e1382" title="http://promsns.org/def/dmn#exporter">exporter</a></li>
+				<li><a href="#d4e1397" title="http://promsns.org/def/dmn#exporterVersion">exporter version</a></li>
+				<li><a href="#d4e1411" title="http://promsns.org/def/dmn#importedElement">imported element</a></li>
+				<li><a href="#d4e1425" title="http://promsns.org/def/dmn#label">label</a></li>
+				<li><a href="#d4e1440" title="http://promsns.org/def/dmn#name">name</a></li>
+				<li><a href="#d4e1459" title="http://promsns.org/def/dmn#outputLabel">output label</a></li>
+				<li><a href="#d4e1473" title="http://promsns.org/def/dmn#question">question</a></li>
+				<li><a href="#d4e1488" title="http://promsns.org/def/dmn#text">text</a></li>
+				<li><a href="#d4e1507" title="http://promsns.org/def/dmn#textFormat">text format</a></li>
+				<li><a href="#d4e1521" title="http://promsns.org/def/dmn#type">type</a></li>
+			</ul>
+			<div id="d4e1354" class="entity">
+				<a id="http://promsns.org/def/dmn#allowedAnswers"></a>
+				<h3>allowed answers<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#allowedAnswers</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1368" class="entity">
+				<a id="http://promsns.org/def/dmn#description"></a>
+				<h3>description<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#description</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1625" title="http://promsns.org/def/dmn#DMNElement">D M N Element</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1382" class="entity">
+				<a id="http://promsns.org/def/dmn#exporter"></a>
+				<h3>exporter<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#exporter</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1397" class="entity">
+				<a id="http://promsns.org/def/dmn#exporterVersion"></a>
+				<h3>exporter version<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#exporterVersion</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1411" class="entity">
+				<a id="http://promsns.org/def/dmn#importedElement"></a>
+				<h3>imported element<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#importedElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1770" title="http://promsns.org/def/dmn#ImportedValues">Imported Values</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1425" class="entity">
+				<a id="http://promsns.org/def/dmn#label"></a>
+				<h3>label<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#label</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1625" title="http://promsns.org/def/dmn#DMNElement">D M N Element</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1440" class="entity">
+				<a id="http://promsns.org/def/dmn#name"></a>
+				<h3>name<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#name</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1729" title="http://promsns.org/def/dmn#ExtensionAttribute">Extension Attribute</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1884" title="http://promsns.org/def/dmn#NamedElement">Named Element</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1904" title="http://promsns.org/def/dmn#OutputClause">Output Clause</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1459" class="entity">
+				<a id="http://promsns.org/def/dmn#outputLabel"></a>
+				<h3>output label<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#outputLabel</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1473" class="entity">
+				<a id="http://promsns.org/def/dmn#question"></a>
+				<h3>question<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#question</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1488" class="entity">
+				<a id="http://promsns.org/def/dmn#text"></a>
+				<h3>text<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#text</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1935" title="http://promsns.org/def/dmn#TextAnnotation">Text Annotation</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1507" class="entity">
+				<a id="http://promsns.org/def/dmn#textFormat"></a>
+				<h3>text format<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#textFormat</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1935" title="http://promsns.org/def/dmn#TextAnnotation">Text Annotation</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1521" class="entity">
+				<a id="http://promsns.org/def/dmn#type"></a>
+				<h3>type<sup title="data property" class="type-dp">dp</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#type</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1853" title="http://promsns.org/def/dmn#KnowledgeSource">Knowledge Source</a><sup title="class" class="type-c">c</sup></dd>
+						<dt>has range</dt>
+						<dd><span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div id="annotationproperties">
+			<h2>Annotation Properties</h2>
+			<ul class="hlist">
+				<li><a href="#d4e68" title="http://promsns.org/def/dmn#aggregation">aggregation</a></li>
+				<li><a href="#d4e80" title="http://promsns.org/def/dmn#allowedInItemDefinition">allowed in item definition</a></li>
+				<li><a href="#d4e92" title="http://promsns.org/def/dmn#allowedValues">allowed values</a></li>
+				<li><a href="#d4e105" title="http://promsns.org/def/dmn#artifact">artifact</a></li>
+				<li><a href="#d4e117" title="http://promsns.org/def/dmn#associationDirection">association direction</a></li>
+				<li><a href="#d4e129" title="http://promsns.org/def/dmn#authorityRequirement">authority requirement</a></li>
+				<li><a href="#d4e146" title="http://promsns.org/def/dmn#binding">binding</a></li>
+				<li><a href="#d4e162" title="http://promsns.org/def/dmn#bindingFormula">binding formula</a></li>
+				<li><a href="#d4e174" title="http://promsns.org/def/dmn#bkm">bkm</a></li>
+				<li><a href="#d4e194" title="http://promsns.org/def/dmn#body">body</a></li>
+				<li><a href="#d4e206" title="http://promsns.org/def/dmn#businessContextElement">business context element</a></li>
+				<li><a href="#d4e218" title="http://promsns.org/def/dmn#calledFunction">called function</a></li>
+				<li><a href="#d4e231" title="http://promsns.org/def/dmn#caller">caller</a></li>
+				<li><a href="#d4e243" title="http://promsns.org/def/dmn#collection">collection</a></li>
+				<li><a href="#d4e255" title="http://promsns.org/def/dmn#column">column</a></li>
+				<li><a href="#d4e268" title="http://promsns.org/def/dmn#containingDefinition">containing definition</a></li>
+				<li><a href="#d4e280" title="http://promsns.org/def/dmn#context">context</a></li>
+				<li><a href="#d4e292" title="http://promsns.org/def/dmn#contextEnrty">context enrty</a></li>
+				<li><a href="#d4e305" title="http://promsns.org/def/dmn#contextEntry">context entry</a></li>
+				<li><a href="#d4e319" title="http://promsns.org/def/dmn#decision">decision</a></li>
+				<li><a href="#d4e338" title="http://promsns.org/def/dmn#decisionLogic">decision logic</a></li>
+				<li><a href="#d4e351" title="http://promsns.org/def/dmn#decisionMade">decision made</a></li>
+				<li><a href="#d4e363" title="http://promsns.org/def/dmn#decisionMaker">decision maker</a></li>
+				<li><a href="#d4e375" title="http://promsns.org/def/dmn#decisionOutput">decision output</a></li>
+				<li><a href="#d4e388" title="http://promsns.org/def/dmn#decisionOwned">decision owned</a></li>
+				<li><a href="#d4e400" title="http://promsns.org/def/dmn#decisionOwner">decision owner</a></li>
+				<li><a href="#d4e412" title="http://promsns.org/def/dmn#decisionService">decision service</a></li>
+				<li><a href="#d4e425" title="http://promsns.org/def/dmn#decisionTable">decision table</a></li>
+				<li><a href="#d4e439" title="http://promsns.org/def/dmn#defaultOutputEntry">default output entry</a></li>
+				<li><a href="#d4e451" title="http://promsns.org/def/dmn#definitions">definitions</a></li>
+				<li><a href="#d4e477" title="http://promsns.org/def/dmn#drgElement">drg element</a></li>
+				<li><a href="#d4e491" title="http://promsns.org/def/dmn#element">element</a></li>
+				<li><a href="#d4e507" title="http://promsns.org/def/dmn#elements">elements</a></li>
+				<li><a href="#d4e520" title="http://promsns.org/def/dmn#encapsulatedDecision">encapsulated decision</a></li>
+				<li><a href="#d4e532" title="http://promsns.org/def/dmn#encapsulatedDecisions">encapsulated decisions</a></li>
+				<li><a href="#d4e544" title="http://promsns.org/def/dmn#encapsulatedLogic">encapsulated logic</a></li>
+				<li><a href="#d4e557" title="http://promsns.org/def/dmn#expressionInput">expression input</a></li>
+				<li><a href="#d4e569" title="http://promsns.org/def/dmn#expressionLanguage">expression language</a></li>
+				<li><a href="#d4e588" title="http://promsns.org/def/dmn#extensionAttribute">extension attribute</a></li>
+				<li><a href="#d4e603" title="http://promsns.org/def/dmn#extensionElement">extension element</a></li>
+				<li><a href="#d4e615" title="http://promsns.org/def/dmn#extensionElements">extension elements</a></li>
+				<li><a href="#d4e627" title="http://promsns.org/def/dmn#formalParameter">formal parameter</a></li>
+				<li><a href="#d4e640" title="http://promsns.org/def/dmn#functionDefinition">function definition</a></li>
+				<li><a href="#d4e654" title="http://promsns.org/def/dmn#hitPolicy">hit policy</a></li>
+				<li><a href="#d4e666" title="http://promsns.org/def/dmn#id">id</a></li>
+				<li><a href="#d4e679" title="http://promsns.org/def/dmn#impactedPerformanceIndicator">impacted performance indicator</a></li>
+				<li><a href="#d4e691" title="http://promsns.org/def/dmn#impactingDecision">impacting decision</a></li>
+				<li><a href="#d4e703" title="http://promsns.org/def/dmn#import">import</a></li>
+				<li><a href="#d4e716" title="http://promsns.org/def/dmn#importType">import type</a></li>
+				<li><a href="#d4e728" title="http://promsns.org/def/dmn#importedValues">imported values</a></li>
+				<li><a href="#d4e740" title="http://promsns.org/def/dmn#informationRequirement">information requirement</a></li>
+				<li><a href="#d4e753" title="http://promsns.org/def/dmn#input">input</a></li>
+				<li><a href="#d4e767" title="http://promsns.org/def/dmn#inputData">input data</a></li>
+				<li><a href="#d4e781" title="http://promsns.org/def/dmn#inputDecision">input decision</a></li>
+				<li><a href="#d4e794" title="http://promsns.org/def/dmn#inputEntry">input entry</a></li>
+				<li><a href="#d4e806" title="http://promsns.org/def/dmn#inputExpression">input expression</a></li>
+				<li><a href="#d4e818" title="http://promsns.org/def/dmn#inputValues">input values</a></li>
+				<li><a href="#d4e831" title="http://promsns.org/def/dmn#invocation">invocation</a></li>
+				<li><a href="#d4e843" title="http://promsns.org/def/dmn#itemComponents">item components</a></li>
+				<li><a href="#d4e855" title="http://promsns.org/def/dmn#itemDefinition">item definition</a></li>
+				<li><a href="#d4e868" title="http://promsns.org/def/dmn#knowledgeRequirement">knowledge requirement</a></li>
+				<li><a href="#d4e882" title="http://promsns.org/def/dmn#knowledgeSource">knowledge source</a></li>
+				<li><a href="#d4e894" title="http://promsns.org/def/dmn#list">list</a></li>
+				<li><a href="#d4e907" title="http://promsns.org/def/dmn#locationURI">location uri</a></li>
+				<li><a href="#d4e921" title="http://promsns.org/def/dmn#namespace">namespace</a></li>
+				<li><a href="#d4e935" title="http://promsns.org/def/dmn#output">output</a></li>
+				<li><a href="#d4e952" title="http://promsns.org/def/dmn#outputDecision">output decision</a></li>
+				<li><a href="#d4e964" title="http://promsns.org/def/dmn#outputDefinition">output definition</a></li>
+				<li><a href="#d4e976" title="http://promsns.org/def/dmn#outputEntry">output entry</a></li>
+				<li><a href="#d4e989" title="http://promsns.org/def/dmn#outputValues">output values</a></li>
+				<li><a href="#d4e1001" title="http://promsns.org/def/dmn#owner">owner</a></li>
+				<li><a href="#d4e1013" title="http://promsns.org/def/dmn#parameter">parameter</a></li>
+				<li><a href="#d4e1028" title="http://promsns.org/def/dmn#preferredOrientation">preferred orientation</a></li>
+				<li><a href="#d4e1040" title="http://promsns.org/def/dmn#relation">relation</a></li>
+				<li><a href="#d4e1054" title="http://promsns.org/def/dmn#requiredAuthority">required authority</a></li>
+				<li><a href="#d4e1067" title="http://promsns.org/def/dmn#requiredDecision">required decision</a></li>
+				<li><a href="#d4e1081" title="http://promsns.org/def/dmn#requiredInput">required input</a></li>
+				<li><a href="#d4e1095" title="http://promsns.org/def/dmn#requiredKnowledge">required knowledge</a></li>
+				<li><a href="#d4e1108" title="http://promsns.org/def/dmn#requiresInformation">requires information</a></li>
+				<li><a href="#d4e1122" title="http://promsns.org/def/dmn#row">row</a></li>
+				<li><a href="#d4e1134" title="http://promsns.org/def/dmn#rule">rule</a></li>
+				<li><a href="#d4e1147" title="http://promsns.org/def/dmn#ruleInput">rule input</a></li>
+				<li><a href="#d4e1159" title="http://promsns.org/def/dmn#ruleOutput">rule output</a></li>
+				<li><a href="#d4e1171" title="http://promsns.org/def/dmn#sourceRef">source ref</a></li>
+				<li><a href="#d4e1184" title="http://promsns.org/def/dmn#targetRef">target ref</a></li>
+				<li><a href="#d4e1196" title="http://promsns.org/def/dmn#typeLanguage">type language</a></li>
+				<li><a href="#d4e1210" title="http://promsns.org/def/dmn#typeRef">type ref</a></li>
+				<li><a href="#d4e1230" title="http://promsns.org/def/dmn#unnamed2">unnamed2</a></li>
+				<li><a href="#d4e55" title="http://promsns.org/def/dmn#URI">uri</a></li>
+				<li><a href="#d4e1242" title="http://promsns.org/def/dmn#value">value</a></li>
+				<li><a href="#d4e1256" title="http://promsns.org/def/dmn#valueExpression">value expression</a></li>
+				<li><a href="#d4e1269" title="http://promsns.org/def/dmn#valueRef">value ref</a></li>
+				<li><a href="#d4e1281" title="http://promsns.org/def/dmn#variable">variable</a></li>
+			</ul>
+			<div id="d4e68" class="entity">
+				<a id="http://promsns.org/def/dmn#aggregation"></a>
+				<h3>aggregation<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#aggregation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e80" class="entity">
+				<a id="http://promsns.org/def/dmn#allowedInItemDefinition"></a>
+				<h3>allowed in item definition<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#allowedInItemDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e92" class="entity">
+				<a id="http://promsns.org/def/dmn#allowedValues"></a>
+				<h3>allowed values<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#allowedValues</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e105" class="entity">
+				<a id="http://promsns.org/def/dmn#artifact"></a>
+				<h3>artifact<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#artifact</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e117" class="entity">
+				<a id="http://promsns.org/def/dmn#associationDirection"></a>
+				<h3>association direction<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#associationDirection</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1553" title="http://promsns.org/def/dmn#Association">Association</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e129" class="entity">
+				<a id="http://promsns.org/def/dmn#authorityRequirement"></a>
+				<h3>authority requirement<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#authorityRequirement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1853" title="http://promsns.org/def/dmn#KnowledgeSource">Knowledge Source</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e146" class="entity">
+				<a id="http://promsns.org/def/dmn#binding"></a>
+				<h3>binding<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#binding</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1822" title="http://promsns.org/def/dmn#Invocation">Invocation</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e162" class="entity">
+				<a id="http://promsns.org/def/dmn#bindingFormula"></a>
+				<h3>binding formula<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#bindingFormula</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1574" title="http://promsns.org/def/dmn#Binding">Binding</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e174" class="entity">
+				<a id="http://promsns.org/def/dmn#bkm"></a>
+				<h3>bkm<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#bkm</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1749" title="http://promsns.org/def/dmn#FunctionDefinition">Function Definition</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1842" title="http://promsns.org/def/dmn#KnowledgeRequirement">Knowledge Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e194" class="entity">
+				<a id="http://promsns.org/def/dmn#body"></a>
+				<h3>body<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#body</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1749" title="http://promsns.org/def/dmn#FunctionDefinition">Function Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e206" class="entity">
+				<a id="http://promsns.org/def/dmn#businessContextElement"></a>
+				<h3>business context element<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#businessContextElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e218" class="entity">
+				<a id="http://promsns.org/def/dmn#calledFunction"></a>
+				<h3>called function<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#calledFunction</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1822" title="http://promsns.org/def/dmn#Invocation">Invocation</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e231" class="entity">
+				<a id="http://promsns.org/def/dmn#caller"></a>
+				<h3>caller<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#caller</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e243" class="entity">
+				<a id="http://promsns.org/def/dmn#collection"></a>
+				<h3>collection<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#collection</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e255" class="entity">
+				<a id="http://promsns.org/def/dmn#column"></a>
+				<h3>column<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#column</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1925" title="http://promsns.org/def/dmn#Relation">Relation</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e268" class="entity">
+				<a id="http://promsns.org/def/dmn#containingDefinition"></a>
+				<h3>containing definition<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#containingDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e280" class="entity">
+				<a id="http://promsns.org/def/dmn#context"></a>
+				<h3>context<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#context</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1615" title="http://promsns.org/def/dmn#ContextEntry">Context Entry</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e292" class="entity">
+				<a id="http://promsns.org/def/dmn#contextEnrty"></a>
+				<h3>context enrty<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#contextEnrty</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1605" title="http://promsns.org/def/dmn#Context">Context</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e305" class="entity">
+				<a id="http://promsns.org/def/dmn#contextEntry"></a>
+				<h3>context entry<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#contextEntry</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e319" class="entity">
+				<a id="http://promsns.org/def/dmn#decision"></a>
+				<h3>decision<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1791" title="http://promsns.org/def/dmn#InformationRequirement">Information Requirement</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1842" title="http://promsns.org/def/dmn#KnowledgeRequirement">Knowledge Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e338" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionLogic"></a>
+				<h3>decision logic<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionLogic</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e351" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionMade"></a>
+				<h3>decision made<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionMade</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1894" title="http://promsns.org/def/dmn#OrganisationalUnit">Organisational Unit</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e363" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionMaker"></a>
+				<h3>decision maker<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionMaker</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e375" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionOutput"></a>
+				<h3>decision output<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionOutput</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e388" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionOwned"></a>
+				<h3>decision owned<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionOwned</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1894" title="http://promsns.org/def/dmn#OrganisationalUnit">Organisational Unit</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e400" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionOwner"></a>
+				<h3>decision owner<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionOwner</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e412" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionService"></a>
+				<h3>decision service<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionService</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e425" class="entity">
+				<a id="http://promsns.org/def/dmn#decisionTable"></a>
+				<h3>decision table<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#decisionTable</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1656" title="http://promsns.org/def/dmn#DecisionRule">Decision Rule</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1801" title="http://promsns.org/def/dmn#InputClause">Input Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e439" class="entity">
+				<a id="http://promsns.org/def/dmn#defaultOutputEntry"></a>
+				<h3>default output entry<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#defaultOutputEntry</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1904" title="http://promsns.org/def/dmn#OutputClause">Output Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e451" class="entity">
+				<a id="http://promsns.org/def/dmn#definitions"></a>
+				<h3>definitions<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#definitions</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1543" title="http://promsns.org/def/dmn#Artifact">Artifact</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1584" title="http://promsns.org/def/dmn#BusinessContextElement">Business Context Element</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1636" title="http://promsns.org/def/dmn#DRGElement">D R G Element</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1667" title="http://promsns.org/def/dmn#DecisionService">Decision Service</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1708" title="http://promsns.org/def/dmn#ElementCollection">Element Collection</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1760" title="http://promsns.org/def/dmn#Import">Import</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e477" class="entity">
+				<a id="http://promsns.org/def/dmn#drgElement"></a>
+				<h3>drg element<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#drgElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1708" title="http://promsns.org/def/dmn#ElementCollection">Element Collection</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e491" class="entity">
+				<a id="http://promsns.org/def/dmn#element"></a>
+				<h3>element<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#element</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1729" title="http://promsns.org/def/dmn#ExtensionAttribute">Extension Attribute</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1739" title="http://promsns.org/def/dmn#ExtensionElements">Extension Elements</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1863" title="http://promsns.org/def/dmn#List">List</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e507" class="entity">
+				<a id="http://promsns.org/def/dmn#elements"></a>
+				<h3>elements<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#elements</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1698" title="http://promsns.org/def/dmn#Element">Element</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e520" class="entity">
+				<a id="http://promsns.org/def/dmn#encapsulatedDecision"></a>
+				<h3>encapsulated decision<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#encapsulatedDecision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1667" title="http://promsns.org/def/dmn#DecisionService">Decision Service</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e532" class="entity">
+				<a id="http://promsns.org/def/dmn#encapsulatedDecisions"></a>
+				<h3>encapsulated decisions<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#encapsulatedDecisions</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e544" class="entity">
+				<a id="http://promsns.org/def/dmn#encapsulatedLogic"></a>
+				<h3>encapsulated logic<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#encapsulatedLogic</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e557" class="entity">
+				<a id="http://promsns.org/def/dmn#expressionInput"></a>
+				<h3>expression input<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#expressionInput</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e569" class="entity">
+				<a id="http://promsns.org/def/dmn#expressionLanguage"></a>
+				<h3>expression language<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#expressionLanguage</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1770" title="http://promsns.org/def/dmn#ImportedValues">Imported Values</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e588" class="entity">
+				<a id="http://promsns.org/def/dmn#extensionAttribute"></a>
+				<h3>extension attribute<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#extensionAttribute</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1625" title="http://promsns.org/def/dmn#DMNElement">D M N Element</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1698" title="http://promsns.org/def/dmn#Element">Element</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e603" class="entity">
+				<a id="http://promsns.org/def/dmn#extensionElement"></a>
+				<h3>extension element<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#extensionElement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1739" title="http://promsns.org/def/dmn#ExtensionElements">Extension Elements</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e615" class="entity">
+				<a id="http://promsns.org/def/dmn#extensionElements"></a>
+				<h3>extension elements<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#extensionElements</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1625" title="http://promsns.org/def/dmn#DMNElement">D M N Element</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e627" class="entity">
+				<a id="http://promsns.org/def/dmn#formalParameter"></a>
+				<h3>formal parameter<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#formalParameter</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1749" title="http://promsns.org/def/dmn#FunctionDefinition">Function Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e640" class="entity">
+				<a id="http://promsns.org/def/dmn#functionDefinition"></a>
+				<h3>function definition<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#functionDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e654" class="entity">
+				<a id="http://promsns.org/def/dmn#hitPolicy"></a>
+				<h3>hit policy<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#hitPolicy</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e666" class="entity">
+				<a id="http://promsns.org/def/dmn#id"></a>
+				<h3>id<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#id</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1625" title="http://promsns.org/def/dmn#DMNElement">D M N Element</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e679" class="entity">
+				<a id="http://promsns.org/def/dmn#impactedPerformanceIndicator"></a>
+				<h3>impacted performance indicator<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#impactedPerformanceIndicator</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e691" class="entity">
+				<a id="http://promsns.org/def/dmn#impactingDecision"></a>
+				<h3>impacting decision<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#impactingDecision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1915" title="http://promsns.org/def/dmn#PerformanceIndicator">Performance Indicator</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e703" class="entity">
+				<a id="http://promsns.org/def/dmn#import"></a>
+				<h3>import<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#import</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e716" class="entity">
+				<a id="http://promsns.org/def/dmn#importType"></a>
+				<h3>import type<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#importType</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1760" title="http://promsns.org/def/dmn#Import">Import</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e728" class="entity">
+				<a id="http://promsns.org/def/dmn#importedValues"></a>
+				<h3>imported values<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#importedValues</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e740" class="entity">
+				<a id="http://promsns.org/def/dmn#informationRequirement"></a>
+				<h3>information requirement<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#informationRequirement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e753" class="entity">
+				<a id="http://promsns.org/def/dmn#input"></a>
+				<h3>input<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#input</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e767" class="entity">
+				<a id="http://promsns.org/def/dmn#inputData"></a>
+				<h3>input data<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#inputData</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1667" title="http://promsns.org/def/dmn#DecisionService">Decision Service</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e781" class="entity">
+				<a id="http://promsns.org/def/dmn#inputDecision"></a>
+				<h3>input decision<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#inputDecision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1667" title="http://promsns.org/def/dmn#DecisionService">Decision Service</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e794" class="entity">
+				<a id="http://promsns.org/def/dmn#inputEntry"></a>
+				<h3>input entry<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#inputEntry</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1656" title="http://promsns.org/def/dmn#DecisionRule">Decision Rule</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e806" class="entity">
+				<a id="http://promsns.org/def/dmn#inputExpression"></a>
+				<h3>input expression<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#inputExpression</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1801" title="http://promsns.org/def/dmn#InputClause">Input Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e818" class="entity">
+				<a id="http://promsns.org/def/dmn#inputValues"></a>
+				<h3>input values<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#inputValues</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1801" title="http://promsns.org/def/dmn#InputClause">Input Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e831" class="entity">
+				<a id="http://promsns.org/def/dmn#invocation"></a>
+				<h3>invocation<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#invocation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1574" title="http://promsns.org/def/dmn#Binding">Binding</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e843" class="entity">
+				<a id="http://promsns.org/def/dmn#itemComponents"></a>
+				<h3>item components<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#itemComponents</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e855" class="entity">
+				<a id="http://promsns.org/def/dmn#itemDefinition"></a>
+				<h3>item definition<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#itemDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e868" class="entity">
+				<a id="http://promsns.org/def/dmn#knowledgeRequirement"></a>
+				<h3>knowledge requirement<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#knowledgeRequirement</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e882" class="entity">
+				<a id="http://promsns.org/def/dmn#knowledgeSource"></a>
+				<h3>knowledge source<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#knowledgeSource</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e894" class="entity">
+				<a id="http://promsns.org/def/dmn#list"></a>
+				<h3>list<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#list</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e907" class="entity">
+				<a id="http://promsns.org/def/dmn#locationURI"></a>
+				<h3>location uri<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#locationURI</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1760" title="http://promsns.org/def/dmn#Import">Import</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1853" title="http://promsns.org/def/dmn#KnowledgeSource">Knowledge Source</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e921" class="entity">
+				<a id="http://promsns.org/def/dmn#namespace"></a>
+				<h3>namespace<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#namespace</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1760" title="http://promsns.org/def/dmn#Import">Import</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e935" class="entity">
+				<a id="http://promsns.org/def/dmn#output"></a>
+				<h3>output<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#output</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e952" class="entity">
+				<a id="http://promsns.org/def/dmn#outputDecision"></a>
+				<h3>output decision<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#outputDecision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1667" title="http://promsns.org/def/dmn#DecisionService">Decision Service</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e964" class="entity">
+				<a id="http://promsns.org/def/dmn#outputDefinition"></a>
+				<h3>output definition<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#outputDefinition</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1904" title="http://promsns.org/def/dmn#OutputClause">Output Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e976" class="entity">
+				<a id="http://promsns.org/def/dmn#outputEntry"></a>
+				<h3>output entry<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#outputEntry</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1656" title="http://promsns.org/def/dmn#DecisionRule">Decision Rule</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e989" class="entity">
+				<a id="http://promsns.org/def/dmn#outputValues"></a>
+				<h3>output values<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#outputValues</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1904" title="http://promsns.org/def/dmn#OutputClause">Output Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1001" class="entity">
+				<a id="http://promsns.org/def/dmn#owner"></a>
+				<h3>owner<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#owner</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1853" title="http://promsns.org/def/dmn#KnowledgeSource">Knowledge Source</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1013" class="entity">
+				<a id="http://promsns.org/def/dmn#parameter"></a>
+				<h3>parameter<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#parameter</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1574" title="http://promsns.org/def/dmn#Binding">Binding</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1028" class="entity">
+				<a id="http://promsns.org/def/dmn#preferredOrientation"></a>
+				<h3>preferred orientation<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#preferredOrientation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1040" class="entity">
+				<a id="http://promsns.org/def/dmn#relation"></a>
+				<h3>relation<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#relation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1863" title="http://promsns.org/def/dmn#List">List</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1054" class="entity">
+				<a id="http://promsns.org/def/dmn#requiredAuthority"></a>
+				<h3>required authority<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#requiredAuthority</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1067" class="entity">
+				<a id="http://promsns.org/def/dmn#requiredDecision"></a>
+				<h3>required decision<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#requiredDecision</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1791" title="http://promsns.org/def/dmn#InformationRequirement">Information Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1081" class="entity">
+				<a id="http://promsns.org/def/dmn#requiredInput"></a>
+				<h3>required input<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#requiredInput</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1563" title="http://promsns.org/def/dmn#AuthorityRequirement">Authority Requirement</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1791" title="http://promsns.org/def/dmn#InformationRequirement">Information Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1095" class="entity">
+				<a id="http://promsns.org/def/dmn#requiredKnowledge"></a>
+				<h3>required knowledge<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#requiredKnowledge</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1842" title="http://promsns.org/def/dmn#KnowledgeRequirement">Knowledge Requirement</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1108" class="entity">
+				<a id="http://promsns.org/def/dmn#requiresInformation"></a>
+				<h3>requires information<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#requiresInformation</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1811" title="http://promsns.org/def/dmn#InputData">Input Data</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1122" class="entity">
+				<a id="http://promsns.org/def/dmn#row"></a>
+				<h3>row<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#row</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1925" title="http://promsns.org/def/dmn#Relation">Relation</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1134" class="entity">
+				<a id="http://promsns.org/def/dmn#rule"></a>
+				<h3>rule<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#rule</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1677" title="http://promsns.org/def/dmn#DecisionTable">Decision Table</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1147" class="entity">
+				<a id="http://promsns.org/def/dmn#ruleInput"></a>
+				<h3>rule input<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ruleInput</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1946" title="http://promsns.org/def/dmn#UnaryTests">Unary Tests</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1159" class="entity">
+				<a id="http://promsns.org/def/dmn#ruleOutput"></a>
+				<h3>rule output<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#ruleOutput</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1873" title="http://promsns.org/def/dmn#LiteralExpression">Literal Expression</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1171" class="entity">
+				<a id="http://promsns.org/def/dmn#sourceRef"></a>
+				<h3>source ref<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#sourceRef</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1553" title="http://promsns.org/def/dmn#Association">Association</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1184" class="entity">
+				<a id="http://promsns.org/def/dmn#targetRef"></a>
+				<h3>target ref<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#targetRef</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1553" title="http://promsns.org/def/dmn#Association">Association</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1196" class="entity">
+				<a id="http://promsns.org/def/dmn#typeLanguage"></a>
+				<h3>type language<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#typeLanguage</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1687" title="http://promsns.org/def/dmn#Definitions">Definitions</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1210" class="entity">
+				<a id="http://promsns.org/def/dmn#typeRef"></a>
+				<h3>type ref<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#typeRef</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1718" title="http://promsns.org/def/dmn#Expression">Expression</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1832" title="http://promsns.org/def/dmn#ItemDefinition">Item Definition</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1904" title="http://promsns.org/def/dmn#OutputClause">Output Clause</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1230" class="entity">
+				<a id="http://promsns.org/def/dmn#unnamed2"></a>
+				<h3>unnamed2<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#unnamed2</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1935" title="http://promsns.org/def/dmn#TextAnnotation">Text Annotation</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e55" class="entity">
+				<a id="http://promsns.org/def/dmn#URI"></a>
+				<h3>uri<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#URI</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1584" title="http://promsns.org/def/dmn#BusinessContextElement">Business Context Element</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1242" class="entity">
+				<a id="http://promsns.org/def/dmn#value"></a>
+				<h3>value<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#value</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1615" title="http://promsns.org/def/dmn#ContextEntry">Context Entry</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1729" title="http://promsns.org/def/dmn#ExtensionAttribute">Extension Attribute</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1256" class="entity">
+				<a id="http://promsns.org/def/dmn#valueExpression"></a>
+				<h3>value expression<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#valueExpression</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1780" title="http://promsns.org/def/dmn#InformationItem">Information Item</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1269" class="entity">
+				<a id="http://promsns.org/def/dmn#valueRef"></a>
+				<h3>value ref<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#valueRef</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1729" title="http://promsns.org/def/dmn#ExtensionAttribute">Extension Attribute</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+			<div id="d4e1281" class="entity">
+				<a id="http://promsns.org/def/dmn#variable"></a>
+				<h3>variable<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+				<p><strong>IRI:</strong> http://promsns.org/def/dmn#variable</p>
+				<dl class="definedBy">
+					<dt>is defined by</dt>
+					<dd><a href="http://promsns.org/def/dmn#">http://promsns.org/def/dmn#</a></dd>
+				</dl>
+				<div class="description">
+					<dl>
+						<dt>has domain</dt>
+						<dd><a href="#d4e1594" title="http://promsns.org/def/dmn#BusinessKnowledgeModel">Business Knowledge Model</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1615" title="http://promsns.org/def/dmn#ContextEntry">Context Entry</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1646" title="http://promsns.org/def/dmn#Decision">Decision</a><sup title="class" class="type-c">c</sup></dd>
+						<dd><a href="#d4e1811" title="http://promsns.org/def/dmn#InputData">Input Data</a><sup title="class" class="type-c">c</sup></dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div id="namespacedeclarations">
+			<h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+			<dl>
+				<dt><em>default namespace</em></dt>
+				<dd>http://promsns.org/def/dmn#</dd>
+				<dt>def</dt>
+				<dd>http://promsns.org/def/</dd>
+				<dt>dmn</dt>
+				<dd>http://promsns.org/def/dmn#</dd>
+				<dt>nicholascar</dt>
+				<dd>https://github.com/nicholascar/</dd>
+				<dt>orcid-org</dt>
+				<dd>http://orcid.org/</dd>
+				<dt>owl</dt>
+				<dd>http://www.w3.org/2002/07/owl#</dd>
+				<dt>rdf</dt>
+				<dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+				<dt>rdfs</dt>
+				<dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+				<dt>terms</dt>
+				<dd>http://purl.org/dc/terms/</dd>
+				<dt>vann</dt>
+				<dd>http://purl.org/vocab/vann/</dd>
+				<dt>xsd</dt>
+				<dd>http://www.w3.org/2001/XMLSchema#</dd>
+			</dl>
+		</div>
+		<p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
+	</body>
+</html>
+

@@ -1,0 +1,13 @@
+# TopBraid
+.project
+.metadata/
+
+# Protege
+catalog-v001.xml
+
+# PyCharm
+.idea/
+
+# Mac
+.DS_Store
+

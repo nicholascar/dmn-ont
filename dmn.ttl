@@ -1,0 +1,706 @@
+@prefix : <http://promsns.org/def/dmn#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:URI rdfs:label "uri"^^xsd:string ;
+    rdfs:domain :BusinessContextElement ;
+    rdfs:isDefinedBy : .
+
+:aggregation rdfs:label "aggregation"^^xsd:string ;
+    rdfs:domain :DecisionTable ;
+    rdfs:isDefinedBy : .
+
+:allowedAnswers a owl:DatatypeProperty ;
+    rdfs:label "allowed answers"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:allowedInItemDefinition rdfs:label "allowed in item definition"^^xsd:string ;
+    rdfs:domain :UnaryTests ;
+    rdfs:isDefinedBy : .
+
+:allowedValues rdfs:label "allowed values"^^xsd:string ;
+    rdfs:domain :ItemDefinition ;
+    rdfs:isDefinedBy : .
+
+:artifact rdfs:label "artifact"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : .
+
+:associationDirection rdfs:label "association direction"^^xsd:string ;
+    rdfs:domain :Association ;
+    rdfs:isDefinedBy : .
+
+:authorityRequirement rdfs:label "authority requirement"^^xsd:string ;
+    rdfs:domain :BusinessKnowledgeModel,
+        :Decision,
+        :KnowledgeSource ;
+    rdfs:isDefinedBy : .
+
+:binding rdfs:label "binding"^^xsd:string ;
+    rdfs:domain :Expression,
+        :InformationItem,
+        :Invocation ;
+    rdfs:isDefinedBy : .
+
+:bindingFormula rdfs:label "binding formula"^^xsd:string ;
+    rdfs:domain :Binding ;
+    rdfs:isDefinedBy : .
+
+:bkm rdfs:label "bkm"^^xsd:string ;
+    rdfs:domain :AuthorityRequirement,
+        :FunctionDefinition,
+        :InformationItem,
+        :KnowledgeRequirement ;
+    rdfs:isDefinedBy : .
+
+:body rdfs:label "body"^^xsd:string ;
+    rdfs:domain :FunctionDefinition ;
+    rdfs:isDefinedBy : .
+
+:businessContextElement rdfs:label "business context element"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : .
+
+:calledFunction rdfs:label "called function"^^xsd:string ;
+    rdfs:domain :Invocation ;
+    rdfs:isDefinedBy : .
+
+:caller rdfs:label "caller"^^xsd:string ;
+    rdfs:domain :Expression ;
+    rdfs:isDefinedBy : .
+
+:collection rdfs:label "collection"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : .
+
+:column rdfs:label "column"^^xsd:string ;
+    rdfs:domain :Relation ;
+    rdfs:isDefinedBy : .
+
+:containingDefinition rdfs:label "containing definition"^^xsd:string ;
+    rdfs:domain :ItemDefinition ;
+    rdfs:isDefinedBy : .
+
+:context rdfs:label "context"^^xsd:string ;
+    rdfs:domain :ContextEntry ;
+    rdfs:isDefinedBy : .
+
+:contextEnrty rdfs:label "context enrty"^^xsd:string ;
+    rdfs:domain :Context ;
+    rdfs:isDefinedBy : .
+
+:contextEntry rdfs:label "context entry"^^xsd:string ;
+    rdfs:domain :Expression,
+        :InformationItem ;
+    rdfs:isDefinedBy : .
+
+:decision rdfs:label "decision"^^xsd:string ;
+    rdfs:domain :AuthorityRequirement,
+        :Expression,
+        :InformationRequirement,
+        :KnowledgeRequirement ;
+    rdfs:isDefinedBy : .
+
+:decisionLogic rdfs:label "decision logic"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:decisionMade rdfs:label "decision made"^^xsd:string ;
+    rdfs:domain :OrganisationalUnit ;
+    rdfs:isDefinedBy : .
+
+:decisionMaker rdfs:label "decision maker"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:decisionOutput rdfs:label "decision output"^^xsd:string ;
+    rdfs:domain :InformationItem ;
+    rdfs:isDefinedBy : .
+
+:decisionOwned rdfs:label "decision owned"^^xsd:string ;
+    rdfs:domain :OrganisationalUnit ;
+    rdfs:isDefinedBy : .
+
+:decisionOwner rdfs:label "decision owner"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:decisionService rdfs:label "decision service"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : .
+
+:decisionTable rdfs:label "decision table"^^xsd:string ;
+    rdfs:domain :DecisionRule,
+        :InputClause ;
+    rdfs:isDefinedBy : .
+
+:defaultOutputEntry rdfs:label "default output entry"^^xsd:string ;
+    rdfs:domain :OutputClause ;
+    rdfs:isDefinedBy : .
+
+:definitions rdfs:label "definitions"^^xsd:string ;
+    rdfs:domain :Artifact,
+        :BusinessContextElement,
+        :DRGElement,
+        :DecisionService,
+        :ElementCollection,
+        :Import,
+        :ItemDefinition ;
+    rdfs:isDefinedBy : .
+
+:description a owl:DatatypeProperty ;
+    rdfs:label "description"^^xsd:string ;
+    rdfs:domain :DMNElement ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:drgElement rdfs:label "drg element"^^xsd:string ;
+    rdfs:domain :Definitions,
+        :ElementCollection ;
+    rdfs:isDefinedBy : .
+
+:element rdfs:label "element"^^xsd:string ;
+    rdfs:domain :ExtensionAttribute,
+        :ExtensionElements,
+        :List ;
+    rdfs:isDefinedBy : .
+
+:elements rdfs:label "elements"^^xsd:string ;
+    rdfs:domain :Element ;
+    rdfs:isDefinedBy : .
+
+:encapsulatedDecision rdfs:label "encapsulated decision"^^xsd:string ;
+    rdfs:domain :DecisionService ;
+    rdfs:isDefinedBy : .
+
+:encapsulatedDecisions rdfs:label "encapsulated decisions"^^xsd:string ;
+    rdfs:domain :BusinessKnowledgeModel ;
+    rdfs:isDefinedBy : .
+
+:encapsulatedLogic rdfs:label "encapsulated logic"^^xsd:string ;
+    rdfs:domain :BusinessKnowledgeModel ;
+    rdfs:isDefinedBy : .
+
+:exporter a owl:DatatypeProperty ;
+    rdfs:label "exporter"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:exporterVersion a owl:DatatypeProperty ;
+    rdfs:label "exporter version"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:expressionInput rdfs:label "expression input"^^xsd:string ;
+    rdfs:domain :LiteralExpression ;
+    rdfs:isDefinedBy : .
+
+:expressionLanguage rdfs:label "expression language"^^xsd:string ;
+    rdfs:domain :Definitions,
+        :ImportedValues,
+        :LiteralExpression,
+        :UnaryTests ;
+    rdfs:isDefinedBy : .
+
+:extensionAttribute rdfs:label "extension attribute"^^xsd:string ;
+    rdfs:domain :DMNElement,
+        :Element ;
+    rdfs:isDefinedBy : .
+
+:extensionElement rdfs:label "extension element"^^xsd:string ;
+    rdfs:domain :ExtensionElements ;
+    rdfs:isDefinedBy : .
+
+:extensionElements rdfs:label "extension elements"^^xsd:string ;
+    rdfs:domain :DMNElement ;
+    rdfs:isDefinedBy : .
+
+:formalParameter rdfs:label "formal parameter"^^xsd:string ;
+    rdfs:domain :FunctionDefinition ;
+    rdfs:isDefinedBy : .
+
+:functionDefinition rdfs:label "function definition"^^xsd:string ;
+    rdfs:domain :Expression,
+        :InformationItem ;
+    rdfs:isDefinedBy : .
+
+:hitPolicy rdfs:label "hit policy"^^xsd:string ;
+    rdfs:domain :DecisionTable ;
+    rdfs:isDefinedBy : .
+
+:id rdfs:label "id"^^xsd:string ;
+    rdfs:domain :DMNElement ;
+    rdfs:isDefinedBy : .
+
+:impactedPerformanceIndicator rdfs:label "impacted performance indicator"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:impactingDecision rdfs:label "impacting decision"^^xsd:string ;
+    rdfs:domain :PerformanceIndicator ;
+    rdfs:isDefinedBy : .
+
+:import rdfs:label "import"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : .
+
+:importType rdfs:label "import type"^^xsd:string ;
+    rdfs:domain :Import ;
+    rdfs:isDefinedBy : .
+
+:importedElement a owl:DatatypeProperty ;
+    rdfs:label "imported element"^^xsd:string ;
+    rdfs:domain :ImportedValues ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:importedValues rdfs:label "imported values"^^xsd:string ;
+    rdfs:domain :LiteralExpression ;
+    rdfs:isDefinedBy : .
+
+:informationRequirement rdfs:label "information requirement"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:input rdfs:label "input"^^xsd:string ;
+    rdfs:domain :DecisionTable,
+        :UnaryTests ;
+    rdfs:isDefinedBy : .
+
+:inputData rdfs:label "input data"^^xsd:string ;
+    rdfs:domain :DecisionService,
+        :InformationItem ;
+    rdfs:isDefinedBy : .
+
+:inputDecision rdfs:label "input decision"^^xsd:string ;
+    rdfs:domain :DecisionService ;
+    rdfs:isDefinedBy : .
+
+:inputEntry rdfs:label "input entry"^^xsd:string ;
+    rdfs:domain :DecisionRule ;
+    rdfs:isDefinedBy : .
+
+:inputExpression rdfs:label "input expression"^^xsd:string ;
+    rdfs:domain :InputClause ;
+    rdfs:isDefinedBy : .
+
+:inputValues rdfs:label "input values"^^xsd:string ;
+    rdfs:domain :InputClause ;
+    rdfs:isDefinedBy : .
+
+:invocation rdfs:label "invocation"^^xsd:string ;
+    rdfs:domain :Binding ;
+    rdfs:isDefinedBy : .
+
+:isCollection a owl:ObjectProperty ;
+    rdfs:label "is collection"^^xsd:string ;
+    rdfs:domain :ItemDefinition ;
+    rdfs:isDefinedBy : .
+
+:itemComponents rdfs:label "item components"^^xsd:string ;
+    rdfs:domain :ItemDefinition ;
+    rdfs:isDefinedBy : .
+
+:itemDefinition rdfs:label "item definition"^^xsd:string ;
+    rdfs:domain :Definitions ;
+    rdfs:isDefinedBy : .
+
+:knowledgeRequirement rdfs:label "knowledge requirement"^^xsd:string ;
+    rdfs:domain :BusinessKnowledgeModel,
+        :Decision ;
+    rdfs:isDefinedBy : .
+
+:knowledgeSource rdfs:label "knowledge source"^^xsd:string ;
+    rdfs:domain :AuthorityRequirement ;
+    rdfs:isDefinedBy : .
+
+:label a owl:DatatypeProperty ;
+    rdfs:label "label"^^xsd:string ;
+    rdfs:domain :DMNElement ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:list rdfs:label "list"^^xsd:string ;
+    rdfs:domain :Expression ;
+    rdfs:isDefinedBy : .
+
+:locationURI rdfs:label "location uri"^^xsd:string ;
+    rdfs:domain :Import,
+        :KnowledgeSource ;
+    rdfs:isDefinedBy : .
+
+:name a owl:DatatypeProperty ;
+    rdfs:label "name"^^xsd:string ;
+    rdfs:domain :ExtensionAttribute,
+        :NamedElement,
+        :OutputClause ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:namespace rdfs:label "namespace"^^xsd:string ;
+    rdfs:domain :Definitions,
+        :Import ;
+    rdfs:isDefinedBy : .
+
+:output rdfs:label "output"^^xsd:string ;
+    rdfs:domain :DecisionTable,
+        :LiteralExpression,
+        :UnaryTests ;
+    rdfs:isDefinedBy : .
+
+:outputDecision rdfs:label "output decision"^^xsd:string ;
+    rdfs:domain :DecisionService ;
+    rdfs:isDefinedBy : .
+
+:outputDefinition rdfs:label "output definition"^^xsd:string ;
+    rdfs:domain :OutputClause ;
+    rdfs:isDefinedBy : .
+
+:outputEntry rdfs:label "output entry"^^xsd:string ;
+    rdfs:domain :DecisionRule ;
+    rdfs:isDefinedBy : .
+
+:outputLabel a owl:DatatypeProperty ;
+    rdfs:label "output label"^^xsd:string ;
+    rdfs:domain :DecisionTable ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:outputValues rdfs:label "output values"^^xsd:string ;
+    rdfs:domain :OutputClause ;
+    rdfs:isDefinedBy : .
+
+:owner rdfs:label "owner"^^xsd:string ;
+    rdfs:domain :KnowledgeSource ;
+    rdfs:isDefinedBy : .
+
+:parameter rdfs:label "parameter"^^xsd:string ;
+    rdfs:domain :Binding,
+        :BusinessKnowledgeModel ;
+    rdfs:isDefinedBy : .
+
+:preferredOrientation rdfs:label "preferred orientation"^^xsd:string ;
+    rdfs:domain :DecisionTable ;
+    rdfs:isDefinedBy : .
+
+:question a owl:DatatypeProperty ;
+    rdfs:label "question"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:relation rdfs:label "relation"^^xsd:string ;
+    rdfs:domain :InformationItem,
+        :List ;
+    rdfs:isDefinedBy : .
+
+:requiredAuthority rdfs:label "required authority"^^xsd:string ;
+    rdfs:domain :AuthorityRequirement ;
+    rdfs:isDefinedBy : .
+
+:requiredDecision rdfs:label "required decision"^^xsd:string ;
+    rdfs:domain :AuthorityRequirement,
+        :InformationRequirement ;
+    rdfs:isDefinedBy : .
+
+:requiredInput rdfs:label "required input"^^xsd:string ;
+    rdfs:domain :AuthorityRequirement,
+        :InformationRequirement ;
+    rdfs:isDefinedBy : .
+
+:requiredKnowledge rdfs:label "required knowledge"^^xsd:string ;
+    rdfs:domain :KnowledgeRequirement ;
+    rdfs:isDefinedBy : .
+
+:requiresInformation rdfs:label "requires information"^^xsd:string ;
+    rdfs:domain :Decision,
+        :InputData ;
+    rdfs:isDefinedBy : .
+
+:row rdfs:label "row"^^xsd:string ;
+    rdfs:domain :Relation ;
+    rdfs:isDefinedBy : .
+
+:rule rdfs:label "rule"^^xsd:string ;
+    rdfs:domain :DecisionTable ;
+    rdfs:isDefinedBy : .
+
+:ruleInput rdfs:label "rule input"^^xsd:string ;
+    rdfs:domain :UnaryTests ;
+    rdfs:isDefinedBy : .
+
+:ruleOutput rdfs:label "rule output"^^xsd:string ;
+    rdfs:domain :LiteralExpression ;
+    rdfs:isDefinedBy : .
+
+:sourceRef rdfs:label "source ref"^^xsd:string ;
+    rdfs:domain :Association ;
+    rdfs:isDefinedBy : .
+
+:supportedObjective a owl:ObjectProperty ;
+    rdfs:label "supported objective"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:targetRef rdfs:label "target ref"^^xsd:string ;
+    rdfs:domain :Association ;
+    rdfs:isDefinedBy : .
+
+:text a owl:DatatypeProperty ;
+    rdfs:label "text"^^xsd:string ;
+    rdfs:domain :LiteralExpression,
+        :TextAnnotation,
+        :UnaryTests ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:textFormat a owl:DatatypeProperty ;
+    rdfs:label "text format"^^xsd:string ;
+    rdfs:domain :TextAnnotation ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:type a owl:DatatypeProperty ;
+    rdfs:label "type"^^xsd:string ;
+    rdfs:domain :Expression,
+        :InformationItem,
+        :KnowledgeSource ;
+    rdfs:isDefinedBy : ;
+    rdfs:range xsd:string .
+
+:typeLanguage rdfs:label "type language"^^xsd:string ;
+    rdfs:domain :Definitions,
+        :ItemDefinition ;
+    rdfs:isDefinedBy : .
+
+:typeRef rdfs:label "type ref"^^xsd:string ;
+    rdfs:domain :Expression,
+        :InformationItem,
+        :ItemDefinition,
+        :OutputClause ;
+    rdfs:isDefinedBy : .
+
+:unnamed2 rdfs:label "unnamed2"^^xsd:string ;
+    rdfs:domain :TextAnnotation ;
+    rdfs:isDefinedBy : .
+
+:usingProcess a owl:ObjectProperty ;
+    rdfs:label "using process"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:usingTask a owl:ObjectProperty ;
+    rdfs:label "using task"^^xsd:string ;
+    rdfs:domain :Decision ;
+    rdfs:isDefinedBy : .
+
+:value rdfs:label "value"^^xsd:string ;
+    rdfs:domain :ContextEntry,
+        :ExtensionAttribute ;
+    rdfs:isDefinedBy : .
+
+:valueExpression rdfs:label "value expression"^^xsd:string ;
+    rdfs:domain :InformationItem ;
+    rdfs:isDefinedBy : .
+
+:valueRef rdfs:label "value ref"^^xsd:string ;
+    rdfs:domain :ExtensionAttribute ;
+    rdfs:isDefinedBy : .
+
+:variable rdfs:label "variable"^^xsd:string ;
+    rdfs:domain :BusinessKnowledgeModel,
+        :ContextEntry,
+        :Decision,
+        :InputData ;
+    rdfs:isDefinedBy : .
+
+:Artifact a owl:Class ;
+    rdfs:label "Artifact"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Context a owl:Class ;
+    rdfs:label "Context"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:DRGElement a owl:Class ;
+    rdfs:label "D R G Element"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:NamedElement a owl:Class ;
+    rdfs:label "Named Element"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:PerformanceIndicator a owl:Class ;
+    rdfs:label "Performance Indicator"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:BusinessContextElement a owl:Class ;
+    rdfs:label "Business Context Element"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Element a owl:Class ;
+    rdfs:label "Element"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:ElementCollection a owl:Class ;
+    rdfs:label "Element Collection"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:ExtensionElements a owl:Class ;
+    rdfs:label "Extension Elements"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:ImportedValues a owl:Class ;
+    rdfs:label "Imported Values"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:InputData a owl:Class ;
+    rdfs:label "Input Data"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Invocation a owl:Class ;
+    rdfs:label "Invocation"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:List a owl:Class ;
+    rdfs:label "List"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:OrganisationalUnit a owl:Class ;
+    rdfs:label "Organisational Unit"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Relation a owl:Class ;
+    rdfs:label "Relation"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Association a owl:Class ;
+    rdfs:label "Association"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Binding a owl:Class ;
+    rdfs:label "Binding"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:ContextEntry a owl:Class ;
+    rdfs:label "Context Entry"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:DecisionRule a owl:Class ;
+    rdfs:label "Decision Rule"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:FunctionDefinition a owl:Class ;
+    rdfs:label "Function Definition"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:InformationRequirement a owl:Class ;
+    rdfs:label "Information Requirement"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:InputClause a owl:Class ;
+    rdfs:label "Input Clause"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:KnowledgeRequirement a owl:Class ;
+    rdfs:label "Knowledge Requirement"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:TextAnnotation a owl:Class ;
+    rdfs:label "Text Annotation"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:ExtensionAttribute a owl:Class ;
+    rdfs:label "Extension Attribute"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Import a owl:Class ;
+    rdfs:label "Import"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:KnowledgeSource a owl:Class ;
+    rdfs:label "Knowledge Source"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:DMNElement a owl:Class ;
+    rdfs:label "D M N Element"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:DecisionService a owl:Class ;
+    rdfs:label "Decision Service"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:OutputClause a owl:Class ;
+    rdfs:label "Output Clause"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:AuthorityRequirement a owl:Class ;
+    rdfs:label "Authority Requirement"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:BusinessKnowledgeModel a owl:Class ;
+    rdfs:label "Business Knowledge Model"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:LiteralExpression a owl:Class ;
+    rdfs:label "Literal Expression"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:UnaryTests a owl:Class ;
+    rdfs:label "Unary Tests"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:DecisionTable a owl:Class ;
+    rdfs:label "Decision Table"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:ItemDefinition a owl:Class ;
+    rdfs:label "Item Definition"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Expression a owl:Class ;
+    rdfs:label "Expression"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:InformationItem a owl:Class ;
+    rdfs:label "Information Item"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Definitions a owl:Class ;
+    rdfs:label "Definitions"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+:Decision a owl:Class ;
+    rdfs:label "Decision"^^xsd:string ;
+    rdfs:isDefinedBy : .
+
+: a owl:Ontology ;
+    rdfs:label "DMN ontology"@en ;
+    dcterms:created "2017-07-26"^^xsd:date ;
+    dcterms:creator <http://orcid.org/0000-0002-8742-7730>,
+        "Nicholas Car"@en ;
+    dcterms:description "An OWL ontology version of Decision Modelling and Notation (DMN) (spec v1.1)[http://www.omg.org/spec/DMN/1.1]."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2017-07-26"@en ;
+    dcterms:rights "(c) Nicholas Car 2017"@en ;
+    dcterms:title "DMN Ontology"@en ;
+    vann:preferredNamespacePrefix "dmn"@en ;
+    vann:preferredNamespaceUri "http://promsns.org/def/dmn#"@en ;
+    rdfs:comment "An OWL ontology version of Decision Modelling and Notation (DMN) (spec v1.1)[http://www.omg.org/spec/DMN/1.1]."@en ;
+    rdfs:isDefinedBy <http://promsns.org/def/dmn> ;
+    rdfs:seeAlso <https://github.com/nicholascar/link-o> ;
+    owl:versionIRI <http://promsns.org/def/dmn/1.1> ;
+    owl:versionInfo 1.1 .
+
